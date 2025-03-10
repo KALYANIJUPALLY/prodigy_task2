@@ -1,32 +1,57 @@
 # prodigy_task2
-Create a K-means clustering algorithm to group customers of a retail store based on their purchase history.
 
-K-Means Clustering Algorithm K-Means Clustering is an unsupervised learning algorithm that is used to solve the clustering problems in machine learning or data science. In this topic, we will learn what is K-means clustering algorithm, how the algorithm works, along with the Python implementation of k-means clustering.
+# K-Means Customer Segmentation
 
-What is K-Means Algorithm?
+## Overview
+This project applies K-Means clustering to segment customers of a retail store based on their purchase history. The dataset used is `Mall_Customers.csv`. The clustering model helps in identifying distinct customer groups to improve marketing strategies and business insights.
 
-K-Means Clustering is an Unsupervised Learning algorithm, which groups the unlabeled dataset into different clusters. Here K defines the number of pre-defined clusters that need to be created in the process, as if K=2, there will be two clusters, and for K=3, there will be three clusters, and so on. It allows us to cluster the data into different groups and a convenient way to discover the categories of groups in the unlabeled dataset on its own without the need for any training. It is a centroid-based algorithm, where each cluster is associated with a centroid. The main aim of this algorithm is to minimize the sum of distances between the data point and their corresponding clusters. The algorithm takes the unlabeled dataset as input, divides the dataset into k-number of clusters, and repeats the process until it does not find the best clusters. The value of k should be predetermined in this algorithm. The k-means clustering algorithm mainly performs two tasks:
+## Dataset
+The dataset contains customer information, including:
+- Customer ID
+- Gender
+- Age
+- Annual Income
+- Spending Score
 
-Determines the best value for K center points or centroids by an iterative process.
-Assigns each data point to its closest k-center. Those data points which are near to the particular k-center, create a cluster.
+## Features Used for Clustering
+For clustering, the model considers:
+- **Annual Income**
+- **Spending Score**
 
-How does the K-Means Algorithm Work?
+## Steps
+1. Load and preprocess the dataset.
+2. Standardize the selected features.
+3. Determine the optimal number of clusters using the **Elbow Method**.
+4. Apply K-Means clustering.
+5. Visualize the customer segments.
+6. Save the clustered dataset.
 
-The working of the K-Means algorithm is explained in the below steps:
+## Installation & Requirements
+Ensure you have the following libraries installed:
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+```
 
-Step-1: Select the number K to decide the number of clusters.
+## Running the Script
+Execute the Python script:
+```bash
+python kmeans_customer_segmentation.py
+```
 
-Step-2: Select random K points or centroids. (It can be other from the input dataset).
+## Output
+- **Elbow Method Graph**: Helps determine the optimal number of clusters.
+- **Clustered Scatter Plot**: Visual representation of customer segments.
+- **Clustered Dataset**: Saved as `Mall_Customers_Clustered.csv`.
 
-Step-3: Assign each data point to their closest centroid, which will form the predefined K clusters.
+## Usage
+This segmentation can be used for:
+- Targeted marketing campaigns.
+- Personalized customer engagement.
+- Business decision-making based on customer behavior.
 
-Step-4: Calculate the variance and place a new centroid of each cluster.
+## Contributing
+Feel free to fork this repository and submit pull requests for improvements or additional features.
 
-Step-5: Repeat the third steps, which means reassign each datapoint to the new closest centroid of each cluster.
+## License
+This project is licensed under the MIT License.
 
-Step-6: If any reassignment occurs, then go to step-4 else go to FINISH.
-
-Step-7: The model is ready.
-
-Dataset: 
-The dataset can be found on Kaggle: https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python
